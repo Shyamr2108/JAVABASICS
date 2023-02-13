@@ -1,0 +1,11 @@
+Vector and ArrayList are both classes in Java that implement the List interface and provide a resizeable array implementation of the List interface.
+However, there are some key differences between them:
+Synchronization: Vector is synchronized, meaning all its methods are thread-safe,
+whereas ArrayList is not synchronized, meaning multiple threads can access and modify an ArrayList simultaneously, which can lead to data corruption.
+
+Performance: Due to its synchronized nature, Vector is slower than ArrayList when accessing or modifying its elements.
+
+To synchronize an ArrayList, you can use the Collections.synchronizedList method, which wraps an ArrayList in a synchronized wrapper. For example:
+
+List<String> list = new ArrayList<>();
+List<String> synchronizedList = Collections.synchronizedList(list);

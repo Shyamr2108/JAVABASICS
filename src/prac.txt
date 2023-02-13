@@ -1,0 +1,52 @@
+ublic class Test {
+    public static void main(String args[]) throws InterruptedException {
+//        Runnable myRunnable =new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//
+//
+//                    for (int i = 0; i < 10; i++) {
+//                        System.out.println(i + " " + Thread.currentThread().getName());
+//                        Thread.sleep(1000);
+//                    }
+//                } catch (InterruptedException ex) {
+//                    System.out.println(ex.getStackTrace());
+//                }
+//            }
+//        };
+//        Thread myThread = new Thread(()->{
+//            try {
+//
+//
+//                for (int i = 0; i < 10; i++) {
+//                    System.out.println(i + " " + Thread.currentThread().getName());
+//                    Thread.sleep(1000);
+//                }
+//            } catch (InterruptedException ex) {
+//                System.out.println(ex.getStackTrace());
+//            }
+//        });
+//        myThread.setName("firstThread");
+//        myThread.start();
+
+        IntStream.range(1,11).forEach((element)-> {System.out.println(element);});
+        List<Integer> myList = new ArrayList<>();
+        myList.add(1);
+        myList.add(2);
+        myList.add(3);
+        myList.add(4);
+        myList.add(5);
+//      //myList.forEach(System.out::println);
+      Integer sum=  myList.stream()
+                .filter(x->x%2==0)
+                .reduce(0,(n1,n2)->n1+n2);
+        System.out.println(sum);
+
+
+
+
+
+
+    }
+}
